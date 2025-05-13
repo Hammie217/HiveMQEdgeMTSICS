@@ -13,26 +13,26 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.hivemq.edge.adapters.helloworld;
+package com.hivemq.edge.adapters.MTSICS;
 
 import com.hivemq.adapter.sdk.api.ProtocolAdapter;
 import com.hivemq.adapter.sdk.api.ProtocolAdapterInformation;
 import com.hivemq.adapter.sdk.api.factories.ProtocolAdapterFactory;
 import com.hivemq.adapter.sdk.api.model.ProtocolAdapterInput;
-import com.hivemq.edge.adapters.helloworld.config.HelloWorldAdapterConfig;
+import com.hivemq.edge.adapters.MTSICS.config.MTSICSAdapterConfig;
 import org.jetbrains.annotations.NotNull;
 
-public class HelloWorldProtocolAdapterFactory implements ProtocolAdapterFactory<HelloWorldAdapterConfig> {
+public class MTSICSProtocolAdapterFactory implements ProtocolAdapterFactory<MTSICSAdapterConfig> {
 
     @Override
     public @NotNull ProtocolAdapterInformation getInformation() {
-        return HelloWorldProtocolAdapterInformation.INSTANCE;
+        return MTSICSProtocolAdapterInformation.INSTANCE;
     }
 
     @Override
     public @NotNull ProtocolAdapter createAdapter(
             final @NotNull ProtocolAdapterInformation adapterInformation,
-            final @NotNull ProtocolAdapterInput<HelloWorldAdapterConfig> input) {
-        return new HelloWorldPollingProtocolAdapter(adapterInformation, input);
+            final @NotNull ProtocolAdapterInput<MTSICSAdapterConfig> input) {
+        return new MTSICSPollingProtocolAdapter(adapterInformation, input);
     }
 }

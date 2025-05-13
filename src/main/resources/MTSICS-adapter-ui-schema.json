@@ -13,10 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hivemq.edge.adapters.helloworld.config;
-
-import com.hivemq.adapter.sdk.api.tag.TagDefinition;
-
-public class HelloWorldAdapterTagDefinition implements TagDefinition {
-    // currently empty
+ {
+  "ui:tabs": [
+    {
+      "id": "coreFields",
+      "title": "Settings",
+      "properties": [
+        "id"
+      ]
+    },
+    {
+      "id": "publishing",
+      "title": "Publishing",
+      "properties": [
+        "maxPollingErrorsBeforeRemoval",
+        "pollingIntervalMillis"
+      ]
+    }
+  ],
+  "port": {
+    "ui:widget": "updown"
+  },
+  "ui:order": [
+    "id",
+    "*"
+  ]
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hivemq.edge.adapters.helloworld.config;
+package com.hivemq.edge.adapters.MTSICS.tag;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hivemq.adapter.sdk.api.annotations.ModuleConfigField;
@@ -23,36 +23,43 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
-public class HelloWorldAdapterTag implements Tag {
+public class SICSTag implements Tag {
 
     @JsonProperty(value = "name", required = true)
-    @ModuleConfigField(title = "name",
-            description = "name of the tag to be used in mappings",
-            format = ModuleConfigField.FieldType.MQTT_TAG,
-            required = true)
+    @ModuleConfigField(
+        title = "Name",
+        description = "Name of the tag to be used in mappings",
+        format = ModuleConfigField.FieldType.MQTT_TAG,
+        required = true
+    )
     private final @NotNull String name;
 
     @JsonProperty(value = "description")
-    @ModuleConfigField(title = "description",
-            description = "A human readable description of the tag")
+    @ModuleConfigField(
+        title = "Description",
+        description = "A human-readable description of the tag"
+    )
     private final @NotNull String description;
 
     @JsonProperty(value = "definition", required = true)
-    @ModuleConfigField(title = "definition",
-            description = "The actual definition of the tag on the device")
-    private final @NotNull HelloWorldAdapterTagDefinition definition;
+    @ModuleConfigField(
+        title = "Definition",
+        description = "The SICS command definition for the tag"
+    )
+    private final @NotNull SICSTagDefinition definition;
 
-    public HelloWorldAdapterTag(
-            @JsonProperty(value = "name", required = true) final @NotNull String name,
-            @JsonProperty(value = "description") final @Nullable String description,
-            @JsonProperty(value = "definition", required = true) final @NotNull HelloWorldAdapterTagDefinition definition) {
+    public SICSTag(
+        @JsonProperty(value = "name", required = true) final @NotNull String name,
+        @JsonProperty(value = "description") final @Nullable String description,
+        @JsonProperty(value = "definition", required = true) final @NotNull SICSTagDefinition definition
+    ) {
         this.name = name;
         this.description = Objects.requireNonNullElse(description, "no description present.");
         this.definition = definition;
     }
 
     @Override
-    public @NotNull HelloWorldAdapterTagDefinition getDefinition() {
+    public @NotNull SICSTagDefinition getDefinition() {
         return definition;
     }
 
@@ -67,27 +74,22 @@ public class HelloWorldAdapterTag implements Tag {
     }
 
     @Override
-    public @NotNull String toString() {
-        return "OpcuaTag{" +
-                "name='" +
-                name +
-                '\'' +
-                ", description='" +
-                description +
-                '\'' +
-                ", definition=" +
-                definition +
-                '}';
+    public String toString() {
+        return "SICSTag{" +
+            "name='" + name + '\'' +
+            ", description='" + description + '\'' +
+            ", definition=" + definition +
+            '}';
     }
 
     @Override
-    public boolean equals(final @Nullable Object o) {
+    public boolean equals(final Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        final HelloWorldAdapterTag helloWorldAdapterTag = (HelloWorldAdapterTag) o;
-        return Objects.equals(name, helloWorldAdapterTag.name) &&
-                Objects.equals(description, helloWorldAdapterTag.description) &&
-                Objects.equals(definition, helloWorldAdapterTag.definition);
+        final SICSTag sicsTag = (SICSTag) o;
+        return Objects.equals(name, sicsTag.name) &&
+               Objects.equals(description, sicsTag.description) &&
+               Objects.equals(definition, sicsTag.definition);
     }
 
     @Override
@@ -95,5 +97,3 @@ public class HelloWorldAdapterTag implements Tag {
         return Objects.hash(name, description, definition);
     }
 }
-
-

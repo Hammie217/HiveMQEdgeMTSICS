@@ -13,7 +13,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.hivemq.edge.adapters.helloworld.config;
+package com.hivemq.edge.adapters.MTSICS.config;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -33,7 +33,7 @@ import java.util.List;
         "port",
         "pollingIntervalMillis",
         "maxPollingErrorsBeforeRemoval"})
-public class HelloWorldAdapterConfig implements ProtocolSpecificAdapterConfig {
+public class MTSICSAdapterConfig implements ProtocolSpecificAdapterConfig {
 
     private static final @NotNull String ID_REGEX = "^([a-zA-Z_0-9-_])*$";
 
@@ -77,7 +77,7 @@ public class HelloWorldAdapterConfig implements ProtocolSpecificAdapterConfig {
     private int maxPollingErrorsBeforeRemoval = 10;
 
 
-    public HelloWorldAdapterConfig() {
+    public MTSICSAdapterConfig() {
     }
 
     public @NotNull String getId() {

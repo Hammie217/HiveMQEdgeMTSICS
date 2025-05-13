@@ -1,1 +1,1 @@
-com.hivemq.edge.adapters.helloworld.HelloWorldProtocolAdapterFactory
+com.hivemq.edge.adapters.MTSICS.MTSICSProtocolAdapterFactory

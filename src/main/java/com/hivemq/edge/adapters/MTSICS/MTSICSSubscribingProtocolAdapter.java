@@ -13,31 +13,31 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.hivemq.edge.adapters.helloworld;
+package com.hivemq.edge.adapters.MTSICS;
 
 import com.hivemq.adapter.sdk.api.ProtocolAdapter;
 import com.hivemq.adapter.sdk.api.ProtocolAdapterInformation;
 import com.hivemq.adapter.sdk.api.factories.AdapterFactories;
 import com.hivemq.adapter.sdk.api.model.*;
 import com.hivemq.adapter.sdk.api.state.ProtocolAdapterState;
-import com.hivemq.edge.adapters.helloworld.config.HelloWorldAdapterConfig;
+import com.hivemq.edge.adapters.MTSICS.config.MTSICSAdapterConfig;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @SuppressWarnings({"FieldCanBeLocal", "unused", "EmptyTryBlock"})
-public class HelloWorldSubscribingProtocolAdapter implements ProtocolAdapter {
-    private static final @NotNull Logger log = LoggerFactory.getLogger(HelloWorldSubscribingProtocolAdapter.class);
+public class MTSICSSubscribingProtocolAdapter implements ProtocolAdapter {
+    private static final @NotNull Logger log = LoggerFactory.getLogger(MTSICSSubscribingProtocolAdapter.class);
 
-    private final @NotNull HelloWorldAdapterConfig adapterConfig;
+    private final @NotNull MTSICSAdapterConfig adapterConfig;
     private final @NotNull ProtocolAdapterInformation adapterInformation;
     private final @NotNull ProtocolAdapterState protocolAdapterState;
     private final @NotNull AdapterFactories adapterFactories;
     private final @NotNull String adapterId;
 
-    public HelloWorldSubscribingProtocolAdapter(
+    public MTSICSSubscribingProtocolAdapter(
             final @NotNull ProtocolAdapterInformation adapterInformation,
-            final @NotNull ProtocolAdapterInput<HelloWorldAdapterConfig> input) {
+            final @NotNull ProtocolAdapterInput<MTSICSAdapterConfig> input) {
         this.adapterId = input.getAdapterId();
         this.adapterInformation = adapterInformation;
         this.adapterConfig = input.getConfig();

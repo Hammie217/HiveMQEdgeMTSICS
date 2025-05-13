@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hivemq.edge.adapters.helloworld;
+package com.hivemq.edge.adapters.MTSICS;
 
 import org.junit.jupiter.api.Test;
 
@@ -22,11 +22,11 @@ import java.util.regex.Pattern;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class HelloWorldProtocolAdapterInformationTest {
+class MTSICSProtocolAdapterInformationTest {
 
     @Test
     void getProtocolId_MustNotContainWhiteSpaces() {
-        final HelloWorldProtocolAdapterInformation information = new HelloWorldProtocolAdapterInformation();
+        final MTSICSProtocolAdapterInformation information = new MTSICSProtocolAdapterInformation();
         assertFalse(information.getProtocolId().contains(" "));
     }
 
@@ -34,7 +34,7 @@ class HelloWorldProtocolAdapterInformationTest {
     void getProtocolId_MustBeAlphaNummercialOrUnderscore() {
         final String ALPHA_NUM = "[A-Za-z0-9_]*";
         final Pattern alphaNumPattern = Pattern.compile(ALPHA_NUM);
-        final HelloWorldProtocolAdapterInformation information = new HelloWorldProtocolAdapterInformation();
+        final MTSICSProtocolAdapterInformation information = new MTSICSProtocolAdapterInformation();
         assertTrue(alphaNumPattern.matcher(information.getProtocolId()).matches());
     }
 }
