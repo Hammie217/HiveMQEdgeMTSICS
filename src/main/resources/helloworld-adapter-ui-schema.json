@@ -1,0 +1,26 @@
+{
+  "ui:tabs": [
+    {
+      "id": "coreFields",
+      "title": "Settings",
+      "properties": [
+        "id"
+      ]
+    },
+    {
+      "id": "publishing",
+      "title": "Publishing",
+      "properties": [
+        "maxPollingErrorsBeforeRemoval",
+        "pollingIntervalMillis"
+      ]
+    }
+  ],
+  "port": {
+    "ui:widget": "updown"
+  },
+  "ui:order": [
+    "id",
+    "*"
+  ]
+}
